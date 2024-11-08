@@ -11,5 +11,5 @@ COPY . /app
 RUN mvn clean package
 
 # Define the entry point to run the application
-ENTRYPOINT ["java", "-jar", "target/my-java-app-1.0-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/my-java-app-1.0-SNAPSHOT.jar"]
 
