@@ -18,7 +18,7 @@ pipeline {
             steps {
                 // Build the Docker image
                 script {
-                    docker.build(DOCKER_IMAGE)
+                    docker.build("${DOCKER_IMAGE}")
                 }
             }
         }
@@ -27,7 +27,7 @@ pipeline {
             steps {
                 // Run Maven commands inside the Docker container
                 script {
-                    docker.image(DOCKER_IMAGE).inside {
+                    docker.image("${DOCKER_IMAGE}").inside {
                         sh 'mvn clean compile test package'
                     }
                 }
